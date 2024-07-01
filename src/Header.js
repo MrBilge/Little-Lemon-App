@@ -3,7 +3,7 @@ import logo from "./assets/Logo.png";
 function Header() {
   return (
     <header className="Header">
-      <img src={logo} style={{maxWidth:'250px'}}></img>
+      <img className="little-logo" src={logo}></img>
       <Nav />
     </header>
   );

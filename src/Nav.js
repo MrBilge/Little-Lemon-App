@@ -1,18 +1,9 @@
 function Nav() {
   return (
     <nav>
-      <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-          justifyContent: "space-around",
-          gap: "3rem",
-        }}
-      >
+      <ul id="nav-list">
         <li>
-          <a href="#" className="nav-item">
-            Home
-          </a>
+          <a className="nav-item">Home</a>
         </li>
         <li>
           <a className="nav-item">About</a>

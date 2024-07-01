@@ -1,5 +1,7 @@
  body{
-  margin : 0
+  margin : 0 ;
+  padding: 0;
+  
  }
 
 .Header{
@@ -7,10 +9,7 @@
   justify-content: space-around;
 }
 
-.Navbar{
-  display: flex;
-  justify-content: center;
-}
+
 
 nav ul li .nav-item{
    text-decoration: none;
@@ -22,19 +21,52 @@ nav ul li .nav-item{
   
    }
  
+    #nav-list{ 
+       display: flex;
+       justify-content: center ;
+       gap: 1rem
+       ;
+       list-style: none;
+     }
+  
+   
+ 
     .About{
-      margin: 4rem 0;
-      padding: 2rem 7rem 4rem 0 ;
+     margin: 0;
+      padding: 2rem 5rem 3rem 1rem ;
       display: flex;
-      justify-content: center;
+      justify-content: space-between ;
       background-color: rgb(58, 97, 96);
       
-    }
+    } 
 
-    .about-description{
-       text-align: center;
-       padding: 0rem 2rem;
+     .description{
+       display: flex;
+       flex-direction: column;
 
+       
+     
+     }
+     
+ 
+
+   
+       #article-About{
+        width: 100%;
+        padding:  1rem 0 0 10rem;
+        width: 50%;
+        margin-left: 8rem;
+        
+       }
+ 
+
+    #explain-About{
+      color: white ;
+      font-family: cursive ;
+      font-size: px ;
+      letter-spacing: 2px ;
+      text-align: center;
+      width: 120%;
     }
 
     .about-btn{
@@ -45,4 +77,128 @@ nav ul li .nav-item{
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-weight: 600;
       cursor: pointer;
+     margin: 2rem 0 0 27rem;
+    }
+
+    #title-About{
+      margin-left: 20rem;
+      font-size: 68px;
+      color:#F4C142 ;
+      font-family:  "KARLA REGULA ";
+      box-shadow: 2px 2px 14px  
+
+    }
+
+    #city-About{
+      font-size: 38px;
+      color:#F4C142 ;
+      font-family:  "KARLA REGULA ";
+      margin-left: 30rem;
+      box-shadow: 1px 3px 44px
+    }
+
+    #img-About{
+      max-width: 30%;
+      height: 80%;
+       padding: 2rem 1rem 0rem;
+       border-radius: 8pc 5pc 3pc 0;
+      }
+
+
+
+ /*  Mobile   */
+
+
+
+    @media screen and (max-width : 675px) {
+      
+        
+
+      .little-logo{
+        width: 150px;
+        height: 50px;
+        
+      }
+
+      .Header{
+        display: flex;
+        justify-content: center;
+      }
+      
+
+       #nav-list {
+          cursor: pointer;
+          display: flex;
+          justify-content: space-around;
+          gap: 5px;
+      
+     
+         
+       }
+   
+       nav ul li .nav-item{
+        font-size: 14px;
+  
+       }
+        .About{
+          gap: 1rem;
+         
+ 
+        }
+
+        .description{
+         display: flex;
+          flex-direction: column;
+          padding:0
+          
+        }
+        #title-About{
+          margin: 10px;
+          padding: 0;
+          font-size: 35px; 
+         }
+
+         #city-About{
+                font-size: 16px;
+                margin: 10px;
+                padding: 0;
+         }
+
+
+        #explain-About{
+         font-size: 10px;
+          
+        }
+
+        #article-About{
+          padding: 0;
+          margin : 0 ;
+          width: 92%;
+        
+        }
+
+        #img-About{
+        max-width: 50%;
+      
+        border-radius: 9px;
+       
+
+
+        }
+        .about-btn{
+         margin: 0;
+         height: 30px;
+         width: 150px;
+         margin : 2rem 0 0 4.5rem 
+          
+         
+
+        }
+ 
+        
+
+      
+
+      
+
     }

@@ -1,9 +1,9 @@
-import About from "./About";
+import Action from "./Action";
 import Specials from "./Specials";
 function Main() {
   return (
     <main>
-      <About />
+      <Action />
       <Specials />
     </main>
   );

@@ -1,10 +1,13 @@
-import Nav from "./Nav";
 import logo from "./assets/Logo.png";
-function Header() {
+import Navbar from "./Navbar";
+function Header(props) {
+  const { mobile, setMobile, handleMobile } = props;
+
   return (
-    <header className="Header">
+    <header className={`Header${mobile ? "active" : ""}`}>
       <img className="little-logo" src={logo}></img>
-      <Nav />
+      <Navbar
+      />
     </header>
   );
 }

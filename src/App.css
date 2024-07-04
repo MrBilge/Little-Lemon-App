@@ -6,9 +6,42 @@
 
 .Header{
   display: flex;
-  justify-content: space-around;
+  justify-content : space-around ;
+  
 }
 
+ .navbar-desktop{
+  display: block
+ }
+
+
+  .navbar-mobile{
+    display: none;
+    margin-top: 1.5rem;
+    margin-left: 9rem;
+  }
+
+     .dropdown-menu{
+    display: none;
+     }
+     
+  .line{
+    width: 30px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: black;
+    margin: 4px 0;
+  }
+
+
+  .navitem-container{
+   border: 2px solid red;
+
+  }
+
+  .dropdown-list{
+    list-style:  none;
+  }
 
 
 nav ul li .nav-item{
@@ -17,6 +50,12 @@ nav ul li .nav-item{
  font-size: 20px;
   &:visited{
     color: black;
+  }
+  &:hover{
+    cursor: pointer;
+     text-decoration: underline;
+     text-shadow: 2px 4px 20px teal
+
   }
   
    }
@@ -32,11 +71,12 @@ nav ul li .nav-item{
    
  
     .About{
-     margin: 0;
+     margin-top: 2rem;
       padding: 2rem 5rem 3rem 1rem ;
       display: flex;
       justify-content: space-between ;
       background-color: rgb(58, 97, 96);
+      gap: 4rem;
       
     } 
 
@@ -115,8 +155,8 @@ nav ul li .nav-item{
         
 
       .little-logo{
-        width: 150px;
-        height: 50px;
+        width: 200px;
+        height: 70px;
         
       }
 
@@ -140,6 +180,42 @@ nav ul li .nav-item{
         font-size: 14px;
   
        }
+         .navbar-desktop{
+          display: none;
+         }
+          
+       .navbar-mobile{
+        display: block ;
+        margin-top: 1.5rem;
+        margin-left: 9rem;
+        transition: 0.4s ease-in;
+      }
+
+       .dropdown-menu{
+        display: block;
+        position:absolute ;
+        top: 10%; /* Navbarın altından başlasın */
+        left: 0;
+        width: 100%;   
+        background-color:#F4C142 ;
+       
+       }
+             
+
+       .list-container:hover {
+      text-shadow: 3px 5px 5px rgb(36, 42, 42);
+        cursor: pointer;
+       }
+       
+        .list-item{
+          font-family: "KARLA REGULA ";
+          
+        }
+
+         hr { 
+          border: none;
+         }
+        
         .About{
           gap: 1rem;
          

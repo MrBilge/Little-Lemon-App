@@ -1,16 +1,22 @@
 import "./App.css";
-import Nav from "./Header";
-import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import logo from "./assets/Logo.png";
+import Navbar from "./Navbar";
+import Header from "./Header";
+import HomePage from "./HomePage";
+import { useState } from "react";
 
 function App() {
   return (
-    <div>
+    
+    <>
       <Header />
-      <Main />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </>
   );
 }
 

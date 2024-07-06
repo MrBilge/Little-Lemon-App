@@ -144,7 +144,117 @@ nav ul li .nav-item{
        border-radius: 8pc 5pc 3pc 0;
       }
 
+  /* Order List */
 
+  .specials-container{
+              display: flex;
+              justify-content: space-evenly;
+                margin: 0  0  0 7rem;
+               width: 90%;
+               gap: 1rem;
+               
+  }
+
+          .order-list{
+            margin-top: 5rem;
+            display: flex;
+            justify-content: space-around;
+          }
+
+          .order-item{
+            list-style: none;
+            border: 2px solid teal;
+            background-size: cover;
+           background-position: center;
+           border-radius: 8px;
+           box-shadow: 3px 3px 5px gray;
+           padding: 45px 45px 45px 45px ;
+           color: burlywood;
+           font-size: 23px;
+           transition: .5s ease-in;
+
+            &:hover{
+              transform: scale(1.2);
+              cursor: pointer;
+            }
+          }
+
+          .special{
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            margin: 5rem 5rem 0 0;
+            background-color:  rgb(58, 97, 96) ;
+            border-radius: 8px;
+            width: 300px
+               }
+         
+
+     
+          
+            .special-description{
+              position: absolute;
+    width: 100% ;
+    height: 100%;
+    left: 0;
+  overflow: hidden;
+  background-color: rgb(58, 97, 96) ;
+  clip-path: ellipse(100% 230px at bottom center);
+  text-align: center;
+
+            }
+
+            .special:hover .special-description{ 
+              animation: new .9s ease-in-out forwards;
+
+            }
+           
+      
+             @keyframes new {
+                 
+               from {
+                  transform: translateY(300px);
+          
+                  
+                }
+          
+                to {
+                  transform: translateY(0);
+                }
+               
+              
+             }
+            
+
+           .special img{
+            position: absolute;
+              width: 100%;
+              height: 90%;
+              top: 10rem;
+               left: -34px;
+             padding: 0 0 0 0 ;
+             margin: 2rem;
+             border: 2px solid steelblue;
+             border-radius: 5px ;
+            
+           }
+
+           .special-btn{
+          
+            margin:1rem 0  1rem 3rem ;
+            font-size: 17px;
+            background-color: teal;
+            color: white;
+            border-radius: 5px;
+            width: 100px;
+          
+        }
+
+
+     
+
+    
 
  /*  Mobile   */
 
@@ -207,9 +317,14 @@ nav ul li .nav-item{
         cursor: pointer;
        }
        
-        .list-item{
+       .nav-item{
           font-family: "KARLA REGULA ";
-          
+         font-size: 16px;
+         text-decoration: none;
+
+          &:visited {
+             color: black;
+           }
         }
 
          hr { 
@@ -225,7 +340,10 @@ nav ul li .nav-item{
         .description{
          display: flex;
           flex-direction: column;
-          padding:0
+          padding:0;
+          transition: 0.3s ease-in;
+        
+          
           
         }
         #title-About{
@@ -270,9 +388,90 @@ nav ul li .nav-item{
          
 
         }
- 
-        
+             
+         /* Order-list */
 
+
+         .specials-container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+           width: 100%;
+
+
+}
+
+          .special{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+           gap: 1rem;
+            border: none;
+            margin: 0 0 0 0;
+            padding: 0;
+            width: 90%;
+            width: 200px;
+            height: 150px;
+          }
+             
+           .special-description{
+            color: black;
+            position: absolute;
+           }
+           
+        
+        
+        .orderlist-container{
+          margin: 3rem
+  
+       }
+
+        .special-btn{
+          
+            display: block;
+            margin:1rem 0  0 0 ;
+            font-size: 17px;
+            background-color: teal;
+            color: white;
+            border-radius: 5px;
+            width: 100px;
+          
+        }
+  
+       .order-list{
+        display: flex;
+        justify-content: space-around;
+        list-style: none ;
+        margin-right:  100px;
+        width: 100%;
+        padding: 0;
+        
+        
+       }
+     
+         .order-item{
+          margin-top: 1rem;
+          border: 3px solid teal;
+          border-radius: 8px;
+          background-color: teal;
+          color: rgb(216, 228, 225);
+            padding: 15px 15px 15px 5px;
+             font-size: 16px;
+
+          
+          &:hover{
+            cursor: pointer;
+          
+          }
+
+            
+
+            
+
+            
+         }
       
 
       

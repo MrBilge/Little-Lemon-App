@@ -52,23 +52,43 @@ function Navbar() {
         <div className="dropdown-menu">
           <ul className="dropdown-list">
             <div className="list-container">
-              <li className="list-item">Home</li>
+              <li>
+                <Link className="nav-item" to="/">
+                  Home
+                </Link>
+              </li>
               <hr></hr>
             </div>
             <div className="list-container">
-              <li className="list-item">About</li>
+              <li>
+                <Link className="nav-item" to="/About">
+                  About
+                </Link>
+              </li>
             </div>
             <hr></hr>
             <div className="list-container">
-              <li className="list-item">CustomersSay</li>
+              <li>
+                <Link className="nav-item" to="/CustomersSay">
+                  CustomersSay
+                </Link>
+              </li>
             </div>
             <hr></hr>
             <div className="list-container">
-              <li className="list-item">Specials</li>
+              <li>
+                <Link className="nav-item" to="/Specials">
+                  Specials
+                </Link>
+              </li>
             </div>
             <hr></hr>
             <div className="list-container">
-              <li className="list-item">Login</li>
+              <li>
+                <Link className="nav-item" to="/Login">
+                  Login
+                </Link>
+              </li>
             </div>
           </ul>
         </div>

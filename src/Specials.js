@@ -1,7 +1,7 @@
 import greeksalad from "./assets/greeksalad.jpg";
 import bruschetta from "./assets/bruschetta.png";
 import lemondessert from "./assets/lemondessert.jpg";
-
+import { useEffect, useState } from "react";
 function Specials() {
   const specials = [
     {
@@ -53,10 +53,19 @@ function Specials() {
     },
     {
       id: 5,
-      name: "Spagetti",
+      name: "Spaghetti",
       src: "https://besantr.com/wp-content/uploads/2020/02/KATKI-LEZZET-7.jpg",
     },
   ];
+
+  const [stretch, setStretch] = useState(false);
+
+  const handleStrech = () => {
+    setStretch(!stretch);
+  };
+  const handleStrechOut = () => {
+    setStretch(false);
+  };
 
   return (
     <>
@@ -66,6 +75,7 @@ function Specials() {
             textAlign: "center",
             marginTop: "5rem",
             fontSize: "25px",
+
             color: "teal",
           }}
         >
@@ -74,7 +84,15 @@ function Specials() {
         <ul className="order-list">
           {varietyFood.map((variety) => (
             <div>
-              <h3 style={{ display: "block" }}>{variety.name}</h3>
+              <h3
+                style={{
+                  display: "block",
+                  color: "teal",
+                  fontWeight: "400",
+                }}
+              >
+                {variety.name}
+              </h3>
               <li
                 key={variety.id}
                 className="order-item"
@@ -86,40 +104,30 @@ function Specials() {
           ))}
         </ul>
       </div>
-      <h3
-        style={{
-          width: "100%",
-          textAlign: "center",
-          marginTop: "5rem",
-          fontSize: "26px",
-          color: "teal",
-        }}
-      >
-        OUR SPECIALS
-      </h3>
-      <div className="specials-container">
+
+      <div className={`specials-container ${stretch ? "stretch" : ""}`}>
+        <h3 className="specials-title"> This Week Specials </h3>
         {specials.map((speacial) => (
           <div
             className="special"
+            onMouseOverCapture={handleStrech}
+            onMouseLeave={handleStrechOut}
             style={{
               display: "flex",
               paddingLeft: "2rem",
-              borderRadius: "5px",
+              borderRadius: "8px",
               backgroundImage: `url(${speacial.src})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
-              width: "300px",
-              height: "200px",
             }}
           >
             <div className="special-description">
-              <h3> {speacial.name} </h3>
-              <p style={{ fontSize: "15px", fontFamily: "cursive" }}>
-                {speacial.desciption}
-              </p>
+              <h3 style={{ color: "#F4C142" }}> {speacial.name} </h3>
+              <p className="special-ingredients">{speacial.desciption}</p>
               <span style={{ color: "#F4C142", fontSize: "18px" }}>
                 {speacial.price}
               </span>
+              <button className="special-btn">Add</button>
             </div>
           </div>
         ))}

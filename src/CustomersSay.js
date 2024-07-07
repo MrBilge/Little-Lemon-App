@@ -1,5 +1,13 @@
+import CustomersSaySection from "./CustomersSaySection";
+import Footer from "./Footer";
 function CustomersSay() {
-  return <></>;
+  return (
+    <>
+      <CustomersSaySection />
+
+      <Footer />
+    </>
+  );
 }
 
 export default CustomersSay;

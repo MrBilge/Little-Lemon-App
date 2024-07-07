@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+ 
  body{
   margin : 0 ;
   padding: 0;
@@ -125,7 +127,9 @@ nav ul li .nav-item{
       font-size: 68px;
       color:#F4C142 ;
       font-family:  "KARLA REGULA ";
-      box-shadow: 2px 2px 14px  
+      box-shadow: 2px 2px 14px   ;
+      text-align: center;
+      
 
     }
 
@@ -134,7 +138,10 @@ nav ul li .nav-item{
       color:#F4C142 ;
       font-family:  "KARLA REGULA ";
       margin-left: 30rem;
-      box-shadow: 1px 3px 44px
+      box-shadow: 1px 3px 20px ;
+      text-align: center;
+      width: 30%;
+      
     }
 
     #img-About{
@@ -146,48 +153,83 @@ nav ul li .nav-item{
 
   /* Order List */
 
-  .specials-container{
-              display: flex;
-              justify-content: space-evenly;
-                margin: 0  0  0 7rem;
-               width: 90%;
-               gap: 1rem;
-               
+  .order-list{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
   }
 
-          .order-list{
-            margin-top: 5rem;
-            display: flex;
-            justify-content: space-around;
-          }
+  .order-item{
+    list-style: none;
+    border: 2px solid teal;
+    background-size: cover;
+   background-position: center;
+   border-radius: 8px;
+   box-shadow: 3px 3px 5px gray;
+   padding: 75px 75px 75px 75px ;
+   color: burlywood;
+   font-size: 23px;
+   transition: .5s ease-in;
 
-          .order-item{
-            list-style: none;
-            border: 2px solid teal;
-            background-size: cover;
-           background-position: center;
-           border-radius: 8px;
-           box-shadow: 3px 3px 5px gray;
-           padding: 45px 45px 45px 45px ;
-           color: burlywood;
-           font-size: 23px;
-           transition: .5s ease-in;
+    &:hover{
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }  
 
-            &:hover{
-              transform: scale(1.2);
-              cursor: pointer;
-            }
-          }
 
+  .specials-container{
+    position: relative;
+              display: flex;
+              justify-content: space-evenly;
+             margin-top: 2rem;
+               width: 100%;
+               height: 105vh;
+               gap: 1rem;
+               background-color:#FFFACD ;
+               clip-path: ellipse(120% 105vh at bottom);
+               
+  }
+               
+                   .specials-title{
+
+                    width: 100%;
+                    top: 3rem ;
+                    text-align: center;
+                       position: absolute;
+                       font-size: 45px;
+                       font-family:  "Dancing Script";
+                       transform: skewY(-10deg);
+                       text-decoration: underline solid 2px;
+                       color: teal;
+
+                   }
+     
           .special{
             position: relative;
             display: flex;
             justify-content: space-around;
             flex-direction: column;
-            margin: 5rem 5rem 0 0;
-            background-color:  rgb(58, 97, 96) ;
-            border-radius: 8px;
-            width: 300px
+            margin: 18rem 5rem 0 4rem;
+            border-radius: 2rem ;
+            width: 300px;
+            height: 200px;
+            cursor: pointer;
+            padding :0 0 0 1rem;
+               }
+
+
+               .special img{
+                position: absolute;
+                  width: 100%;
+                  height: 90%;
+                  top: 10rem;
+                   left: -34px;
+                 padding: 0 0 0 0 ;
+                 margin: 2rem;
+                 border: 2px solid steelblue;
+                 border-radius: 5px ;
+                
                }
          
 
@@ -195,67 +237,136 @@ nav ul li .nav-item{
           
             .special-description{
               position: absolute;
-    width: 100% ;
-    height: 100%;
+          width: 100% ;
+           height: 120% ;
     left: 0;
   overflow: hidden;
   background-color: rgb(58, 97, 96) ;
-  clip-path: ellipse(100% 230px at bottom center);
+  clip-path: ellipse(100% 230px at bottom);
   text-align: center;
 
             }
 
+            .special-btn{
+               display: block;
+              font-size: 17px;
+                margin: 1rem 0  3rem 7rem;
+             text-align: center;
+              border-radius: 5px;
+              width: 100px;
+              background-color: #F4C142;
+              color: teal ;
+              font-family: monospace;
+              border: none;
+              
+              
+          }
             .special:hover .special-description{ 
               animation: new .9s ease-in-out forwards;
 
             }
-           
-      
-             @keyframes new {
+
+
+            @keyframes new {
                  
-               from {
-                  transform: translateY(300px);
-          
-                  
-                }
-          
-                to {
-                  transform: translateY(0);
-                }
-               
+              from {
+                 transform: translateY(0);
+         
+                 
+               }
+         
+               to {
+                 transform: translateY(180px);
+               }
               
-             }
+             
+            }
             
 
-           .special img{
-            position: absolute;
-              width: 100%;
-              height: 90%;
-              top: 10rem;
-               left: -34px;
-             padding: 0 0 0 0 ;
-             margin: 2rem;
-             border: 2px solid steelblue;
-             border-radius: 5px ;
-            
-           }
 
-           .special-btn{
-          
-            margin:1rem 0  1rem 3rem ;
-            font-size: 17px;
-            background-color: teal;
-            color: white;
-            border-radius: 5px;
-            width: 100px;
-          
+
+
+                 /* Customers */
+
+                .customer-container{
+                  
+                  margin : 5rem 2.2rem 2rem 4rem  ;
+                  display: flex;
+                  gap: 10rem;
+                } 
+
+                 .customer{
+                  margin-bottom: 3rem;
+                 }
+
+                     .ratings{
+                         
+                       font-size: 35px;
+                       color: #F4C142;
+
+                     }
+               
+                .person-img{
+                  width: 150px;
+                  height: 100px;
+                  border-radius: 50%;
+
+                }
+
+                .person-comment{
+          font-size: 20px;
+            width: 100%;
+             position: relative;
+                }
+
+        /* Footer */
+
+        footer{
+          display: flex;
+          justify-content: space-around;
+         background-color: rgb(58, 97, 96)
+         
+
+        }
+
+        .footer-logo{
+           margin: 1rem;
+           width: 130px;
+           height: 180px;
+        }
+        .footer-tittle{
+
+       color: #F4C142;
+          font-weight: 400;
+        }
+
+        .nav-foot-list{
+          list-style: none;
+          margin: 15px ;
+          cursor: pointer;
+        }
+
+        .contact-item{
+         
+          font-weight: 600;
         }
 
 
-     
+        .social-item{
+          cursor: pointer;
+          font-weight: 600;
+        }
 
-    
+        .nav-foot-list{
+          cursor: pointer;
+          font-weight: 600;
+        }
 
+        .nav-foot-item{
+          color: black;
+          text-decoration: none;
+          font-weight: 600;
+        }
  /*  Mobile   */
 
 
@@ -392,35 +503,11 @@ nav ul li .nav-item{
          /* Order-list */
 
 
-         .specials-container{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          margin: 0;
-           width: 100%;
-
-
-}
-
-          .special{
-            position: relative;
-            display: flex;
-            flex-direction: row;
-           gap: 1rem;
-            border: none;
-            margin: 0 0 0 0;
-            padding: 0;
-            width: 90%;
-            width: 200px;
-            height: 150px;
-          }
+       
+    
              
-           .special-description{
-            color: black;
-            position: absolute;
-           }
-           
+       
+
         
         
         .orderlist-container{
@@ -428,18 +515,7 @@ nav ul li .nav-item{
   
        }
 
-        .special-btn{
-          
-            display: block;
-            margin:1rem 0  0 0 ;
-            font-size: 17px;
-            background-color: teal;
-            color: white;
-            border-radius: 5px;
-            width: 100px;
-          
-        }
-  
+     
        .order-list{
         display: flex;
         justify-content: space-around;
@@ -457,7 +533,7 @@ nav ul li .nav-item{
           border-radius: 8px;
           background-color: teal;
           color: rgb(216, 228, 225);
-            padding: 15px 15px 15px 5px;
+            padding: 25px 25px 25px 45px;
              font-size: 16px;
 
           
@@ -465,15 +541,110 @@ nav ul li .nav-item{
             cursor: pointer;
           
           }
-
-            
-
-            
-
-            
          }
-      
 
-      
+         .specials-container{
+       
+                    display: flex;
+                    justify-content: space-evenly;
+                    position: relative;
+                   margin-top: 1rem;
+                     width: 100%;
+                     height: 61vh;
+                     gap: 1rem;
+                     background-color:#FFFACD ;
+                     clip-path: ellipse(100% 61vh at bottom);
+                     transition: .2s ease-in-out all ;
+                     
+        }
+
+          .special{
+            display: flex;
+             margin: 10rem 1rem 0 1rem ;
+             width: 150px;
+             height: 100px;
+          }
+          .special-description{
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          height: auto;
+         font-size: 5px;
+ 
+  left: 0;
+overflow: hidden; 
+background-color: #FFFACD;
+clip-path: ellipse(150% 300px at bottom);
+text-align: center;
+
+          } 
+
+
+          .special-ingredients{
+
+            font-size:12px;
+
+          }
+          
+
+            
+          .special-btn{
+          
+            display: block;
+            margin: 1rem 0  0 2rem ;
+            font-size: 10px;
+            background-color: teal;
+            color: white;
+            border-radius: 5px;
+            width: 50px;
+          
+        }
+  
+         .specials-title{
+
+          width: 100%;
+          top: 1rem;
+          text-align: center;
+             position: absolute;
+             font-size: 25px;
+             font-family:  "Dancing Script";
+             transform: skewY(-10deg);
+             text-decoration: underline solid 2px;
+             color: teal;
+
+         }
+
+          
+
+         .special:hover .special-description{ 
+          animation: new .9s ease-in-out forwards;
+          
+        
+
+        }
+         
+        .specials-container.stretch{
+          height: 65vh;
+          clip-path: ellipse(100% 65vh at bottom);
+         
+
+        }
+          
+
+
+        @keyframes new {
+             
+          from {
+             transform: translateY(0);
+     
+             
+           }
+     
+           to {
+             transform: translateY(120px);
+           }
+          
+         
+        }
 
     }

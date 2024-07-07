@@ -6,7 +6,11 @@ import logo from "./assets/Logo.png";
 import Navbar from "./Navbar";
 import Header from "./Header";
 import HomePage from "./HomePage";
-import { useState } from "react";
+import About from "./About";
+import BookingPage from "./BookingPage";
+import Menu from "./Menu";
+import Login from "./Login";
+import CustomersSay from "./CustomersSay";
 
 function App() {
   return (
@@ -14,6 +18,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/BookingPage" element={<BookingPage />} />
+        <Route path="/Menu" element={<Menu />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/CustomersSay" element={<CustomersSay />} />
       </Routes>
     </>
   );

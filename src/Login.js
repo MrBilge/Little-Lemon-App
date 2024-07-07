@@ -1,5 +1,6 @@
 import Footer from "./Footer";
-function Menu() {
+
+function Login() {
   return (
     <>
       <Footer />
@@ -7,4 +8,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default Login;

@@ -6,8 +6,7 @@ function Header(props) {
   return (
     <header className={`Header${mobile ? "active" : ""}`}>
       <img className="little-logo" src={logo}></img>
-      <Navbar
-      />
+      <Navbar />
     </header>
   );
 }

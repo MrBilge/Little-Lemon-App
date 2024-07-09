@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
  
  body{
   margin : 0 ;
   padding: 0;
   
  }
+
+
 
 .Header{
   display: flex;
@@ -79,6 +83,8 @@ nav ul li .nav-item{
       justify-content: space-between ;
       background-color: rgb(58, 97, 96);
       gap: 4rem;
+      animation: show 2s ease-in;
+     
       
     } 
 
@@ -104,7 +110,7 @@ nav ul li .nav-item{
 
     #explain-About{
       color: white ;
-      font-family: cursive ;
+      font-family: "Dancing Script" ;
       font-size: px ;
       letter-spacing: 2px ;
       text-align: center;
@@ -113,17 +119,17 @@ nav ul li .nav-item{
 
     .about-btn{
       height: 50px;
-      width: 250px;
-      border-radius: 8px;
-      background-color: lemonchiffon;
+      width: 300px;
+       border: none;
+       background-color: #F4C142;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-weight: 600;
       cursor: pointer;
-     margin: 2rem 0 0 27rem;
+     margin: 2rem 0 0 25rem;
     }
 
     #title-About{
-      margin-left: 20rem;
+      margin-left: 15rem;
       font-size: 68px;
       color:#F4C142 ;
       font-family:  "KARLA REGULA ";
@@ -137,7 +143,7 @@ nav ul li .nav-item{
       font-size: 38px;
       color:#F4C142 ;
       font-family:  "KARLA REGULA ";
-      margin-left: 30rem;
+      margin-left: 26rem;
       box-shadow: 1px 3px 20px ;
       text-align: center;
       width: 30%;
@@ -145,8 +151,11 @@ nav ul li .nav-item{
     }
 
     #img-About{
-      max-width: 30%;
-      height: 80%;
+      width: 400px;
+      height: 600px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
        padding: 2rem 1rem 0rem;
        border-radius: 8pc 5pc 3pc 0;
       }
@@ -290,9 +299,10 @@ nav ul li .nav-item{
 
                 .customer-container{
                   
-                  margin : 5rem 2.2rem 2rem 4rem  ;
+                  margin : 5rem   ;
                   display: flex;
-                  gap: 10rem;
+                  flex-direction: column;
+                  gap:1rem;
                 } 
 
                  .customer{
@@ -367,12 +377,238 @@ nav ul li .nav-item{
           text-decoration: none;
           font-weight: 600;
         }
+
+
+
+        /* About Navbar section */
+
+
+
+        .section-about{
+           
+          display: flex;
+          flex-direction: column;
+           animation: show 3s ease-in-out;
+          
+
+
+        }
+          
+              @keyframes show {
+                 0%{
+                  opacity: 0;
+                 }
+
+                 95%{
+                display: none;
+                 }
+                 100%{
+                  opacity: 1;
+                 }
+              }
+
+         .nav-about{
+         
+          display: flex;
+          background-color: #F4C142;
+         padding: 6rem 3rem 6rem 2rem
+
+
+
+         }
+
+          .description-title{
+            font-size: 45px;
+            
+          }
+
+          .title-1{
+            color: rgb(58, 97, 96);
+          }
+
+          .title-2{
+            color: #F4C142;
+          }
+
+          .title-3{
+          
+            font-weight: 300;
+
+          }
+
+          .subtitle{
+            font-size: 49px;
+            font-family:  "Dancing Script";
+          }
+
+        
+          
+           .nav-about__2{
+          margin: 0;
+             background-color:  rgb(58, 97, 96);
+             flex-direction: row-reverse;
+             justify-content: center;
+             gap: 8rem;
+              
+           }
+           .nav-about__3{
+            background-color: rgb(197, 186, 186);
+           
+           }
+
+           
+            .nav-about2__description{
+                width: 200%;
+
+            }
+
+       .description{
+        font-family:  "Dancing Script";
+           width: 60%;
+           font-size: 24px;
+           
+       }
+
+       .description-2{
+        width: 100%;
+       }
+       
+            
+       .nav-about-img{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          width: 450px;
+          height: 400px;
+          box-shadow: 3px 2px 10px gray
+          
+         
+       } 
+
+       .nav-about__img2{
+        margin-top: 2rem;
+        width: 200rem;
+        border-radius: 4px;
+
+       } 
+          .nav-about__img3{
+            position: relative;
+            width: 23rem;
+            z-index: 1;
+            
+          }
+           
+          .servedImg-section{
+            position: relative;;
+            padding: 4rem;
+          }
+
+          .nav-about__img4{
+            position: absolute;
+            top: 1rem;
+            right: 20rem;
+            z-index: 0;
+       
+          }
+
+       .chefs-img{
+        display: flex;
+        gap: 1rem;
+        position: relative;
+        animation: show 3.5s ease-in;
+       }
+
+        .nav-about__img1{
+         position: absolute;
+         top: 10rem;
+         right: 20rem;
+         box-shadow: 3px 2px 10px gray
+        }
+ 
+
+         /* CustomerSay Section */
+
+         
+         .customer-title{
+          font-size: 65px;
+          width: 100%;
+          text-align: center;
+          font-family: 'Dancing Script';
+         }
+
+         .share-container{
+          display: flex;
+          flex-direction: column;
+        
+          align-items: center;
+          background-color: #FFFACD;
+         }
+         .share-title{
+          width: 100%;
+          padding: 1rem;
+          text-align: center;
+          font-family: "Dancing Script";
+          font-size: 45px;
+          font-weight: 300;
+         }
+
+         textarea {
+         
+          resize: none;
+          width: 460px;
+          height: 6rem;
+           background-color: #F4C142;
+           padding: 1rem;
+           font-size : 20px ;
+           border-radius: 8px;
+       
+           border: 2px solid teal;
+           
+        }
+
+        .form-container{
+    
+          display: flex;
+          flex-direction: column;
+         
+
+        }
+
+        .share-btn{
+     
+          top: 9rem;
+          width: 200px;
+          height: 3rem;
+          left: 12rem;
+          border: none;
+          background-color: teal;
+          color: #FFFACD;
+           left: 4rem;
+           cursor: pointer;
+           transition: .5s ease-in;
+           
+              
+           &:hover{
+            background-color: #F4C142 ;
+            color: black;
+            transform: scale(1.1);
+            transform: translateY(.5rem)
+            
+           }
+         
+        }
+
  /*  Mobile   */
 
 
 
     @media screen and (max-width : 675px) {
-      
+       
+        body{
+
+          margin: 0 ;
+          padding: 0
+        }
         
 
       .little-logo{
@@ -443,7 +679,7 @@ nav ul li .nav-item{
          }
         
         .About{
-          gap: 1rem;
+          gap: 2rem;
          
  
         }
@@ -483,9 +719,16 @@ nav ul li .nav-item{
         }
 
         #img-About{
-        max-width: 50%;
-      
+       margin-top: 3rem;
+       width: 9rem ;
+        height: 250px ;
         border-radius: 9px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+         
+        
        
 
 
@@ -624,8 +867,8 @@ text-align: center;
         }
          
         .specials-container.stretch{
-          height: 65vh;
-          clip-path: ellipse(100% 65vh at bottom);
+          height: 70vh;
+          clip-path: ellipse(100% 70vh at bottom);
          
 
         }

@@ -1,6 +1,5 @@
 import "./App.css";
-import Main from "./Main";
-import Footer from "./Footer";
+
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import logo from "./assets/Logo.png";
 import Navbar from "./Navbar";
@@ -11,6 +10,7 @@ import BookingPage from "./BookingPage";
 import Menu from "./Menu";
 import Login from "./Login";
 import CustomersSay from "./CustomersSay";
+import React, { createContext, useState, useContext } from "react";
 
 function App() {
   return (

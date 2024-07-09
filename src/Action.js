@@ -18,8 +18,12 @@ function Action() {
         </article>
         <button className="btn about-btn">Reserve</button>
       </div>
-
-      <img id="img-About" src={restaurant}></img>
+      <div>
+        <div
+          id="img-About"
+          style={{ backgroundImage: `url(${restaurant})` }}
+        ></div>
+      </div>
     </div>
   );
 }

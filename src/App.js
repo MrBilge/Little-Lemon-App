@@ -11,6 +11,7 @@ import Menu from "./Menu";
 import Login from "./Login";
 import CustomersSay from "./CustomersSay";
 import React, { createContext, useState, useContext } from "react";
+import MenuSection from "./MenuSection";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/About" element={<About />} />
         <Route path="/BookingPage" element={<BookingPage />} />
-        <Route path="/Menu" element={<Menu />} />
+        <Route path="/Menu" element={<MenuSection />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/CustomersSay" element={<CustomersSay />} />
       </Routes>

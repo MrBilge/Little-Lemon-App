@@ -160,6 +160,83 @@ nav ul li .nav-item{
        border-radius: 8pc 5pc 3pc 0;
       }
 
+
+      /* Menu section */
+
+   
+        .menu-title{
+          margin-top: 4rem;
+          width: 100%;
+          text-align: center;
+          font-size: 38px;
+          font-family: "Dancing Script";
+        }
+
+      .menu-section{
+        display: flex;
+        justify-content: space-between;
+         margin: 1rem 4rem         ;
+       
+         
+      }
+
+    .menu-card{
+
+      display: flex;
+      flex-direction: column;
+      width: 150px;
+      height: 400px;
+      
+     
+     
+      
+    }
+
+    .menu-card__img{
+       
+      height: 200px;
+       width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: .4s ease-in;
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+
+    .menu-description{
+      
+      height: 100%;
+      text-align: center;
+    }
+
+      .menu-card__name{
+        color: teal;
+        font-weight: 700;
+      }
+
+      .menu-card__ingredients{
+
+        color: teal;
+      }
+     .menu-card__price{
+
+       color: teal;
+       font-size: 16px;
+       font-weight: 500;
+     }
+
+    .menu-btn{
+      
+      background-color: #F4C142;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+
   /* Order List */
 
   .order-list{

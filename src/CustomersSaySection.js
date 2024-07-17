@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import React from "react";
 import { useCustomerContext } from "./CustomerContext";
 function CustomersSaySection() {
-  const { data } = useCustomerContext();
+  const [data] = useCustomerContext();
 
   return (
     <>

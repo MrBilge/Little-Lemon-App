@@ -3,7 +3,7 @@ import { useCustomerContext } from "./CustomerContext";
 
 function CommentSection() {
   const [inputValue, setInputValue] = useState("");
-  const { data, setData } = useCustomerContext();
+  const [data, setData] = useCustomerContext();
 
   const handleAddComment = () => {
     const newComment = {
@@ -12,8 +12,10 @@ function CommentSection() {
       src: "default_image_url", // Bir varsayılan resim URL'si kullanabilirsiniz.
       comment: inputValue,
     };
-    setData([...data, newComment]);
-    setInputValue("");
+    if (inputValue.trim().length !== 0) {
+      setData([...data, newComment]);
+      setInputValue("");
+    }
   };
 
   const handleKeyPress = function (e) {
@@ -26,14 +28,14 @@ function CommentSection() {
   return (
     <div className="share-container">
       <h2 className="share-title">share your experience</h2>
-      <div className="form-container">
+      <div className="share-form-container">
         <textarea
           type="text"
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
-          onKeyUp={handleKeyPress}
+          onKeyDown={handleKeyPress}
         ></textarea>
         <div
           style={{

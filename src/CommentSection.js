@@ -1,20 +1,23 @@
 import { useState } from "react";
 import { useCustomerContext } from "./CustomerContext";
+import anonim from "./assets/anonim.webp";
 
 function CommentSection() {
   const [inputValue, setInputValue] = useState("");
   const [data, setData] = useCustomerContext();
+  const [customerName, setCustomerName] = useState("");
 
   const handleAddComment = () => {
     const newComment = {
       id: (data.length + 1).toString(),
-      name: "Anonymous",
-      src: "default_image_url", // Bir varsayılan resim URL'si kullanabilirsiniz.
+      name: customerName,
+      src: anonim, // Bir varsayılan resim URL'si kullanabilirsiniz.
       comment: inputValue,
     };
     if (inputValue.trim().length !== 0) {
       setData([...data, newComment]);
       setInputValue("");
+      setCustomerName("");
     }
   };
 
@@ -28,6 +31,15 @@ function CommentSection() {
   return (
     <div className="share-container">
       <h2 className="share-title">share your experience</h2>
+      <label className="comment-customername-label">
+        CustomerName
+        <input
+          type="text"
+          className="comment-customername-input"
+          value={customerName}
+          onChange={(e) => setCustomerName(e.target.value)}
+        ></input>
+      </label>
       <div className="share-form-container">
         <textarea
           type="text"

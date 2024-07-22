@@ -1,4 +1,7 @@
+import { BrowserRouter, Link } from "react-router-dom";
+
 import restaurant from "./assets/restauranfood.jpg";
+
 function Action() {
   return (
     <div className="About">
@@ -16,7 +19,9 @@ function Action() {
             fringilla.{" "}
           </p>
         </article>
-        <button className="btn about-btn">Reserve</button>
+        <Link to="/BookingPage">
+          <button className="btn about-btn">Reserve</button>
+        </Link>
       </div>
       <div>
         <div

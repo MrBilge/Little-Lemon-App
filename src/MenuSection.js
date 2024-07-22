@@ -1,10 +1,12 @@
 import Menu from "./Menu";
 import Footer from "./Footer";
 
-const MenuSection = function () {
+const MenuSection = function (props) {
+  const { data } = props;
+
   return (
     <>
-      <Menu />
+      <Menu data={data} />
       <Footer />
     </>
   );

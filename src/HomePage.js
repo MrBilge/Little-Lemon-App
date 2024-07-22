@@ -4,11 +4,12 @@ import CustomersSaySection from "./CustomersSaySection";
 import Footer from "./Footer";
 import Menu from "./Menu";
 
-function HomePage() {
+function HomePage(props) {
+  const { data } = props;
   return (
     <>
       <Action />
-      <Menu />
+      <Menu data={data} />
       <Specials />
       <CustomersSaySection />
       <Footer />

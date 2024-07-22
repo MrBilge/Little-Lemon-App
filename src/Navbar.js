@@ -36,11 +36,7 @@ function Navbar() {
               Menu
             </Link>
           </li>
-          <li>
-            <Link to="/Login" className="nav-item">
-              Login
-            </Link>
-          </li>
+          <li></li>
         </ul>
       </nav>
       <nav onClick={handleMobile} className="navbar-mobile">

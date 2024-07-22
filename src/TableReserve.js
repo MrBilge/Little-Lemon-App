@@ -1,12 +1,20 @@
 import { useState } from "react";
-
+import logo from "./assets/Logo.png";
 function TableReserve() {
   const [person, setPerson] = useState(1);
   const [name, setName] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  const [requestValue, setRequestValue] = useState("");
   const [date, setDate] = useState();
-  const [hour, setHour] = useState();
+  const [hour, setHour] = useState("19");
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState({
+    nameError: "",
+    personError: "",
+    requestError: "",
+    dateError: "",
+    hourError: "",
+    EmptyError: "",
+  });
 
   function handlePlusPerson(e) {
     e.preventDefault();
@@ -18,42 +26,95 @@ function TableReserve() {
     if (person > 1) setPerson(person - 1);
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    setPerson(1);
+    setName("");
+    setRequestValue("");
+    setDate("");
+    setHour("19:00");
+    setSuccess(false); // Reset success state
+    setError({
+      nameError: "",
+      personError: "",
+      requestError: "",
+      dateError: "",
+      hourError: "",
+    }); // Reset error state
+  }
+
   function handleReserved(e) {
     e.preventDefault();
-    const ControlHours = function () {
-      if (
-        today.getDate() === reserveDate.getDate() &&
-        today.getMonth() === reserveDate.getMonth() &&
-        today.getFullYear() === reserveDate.getFullYear()
-      ) {
-        const isValidHour = reserveDate.getHours() > today.getHours();
-        return isValidHour;
-      }
-    };
 
     const today = new Date();
     const reserveDate = new Date(date);
+    const sameDay =
+      reserveDate.getDate() === today.getDate() &&
+      reserveDate.getMonth() === today.getMonth();
 
-    if (ControlHours()) {
-      setInputValue("");
-      setName("");
-      setDate("");
-      setSuccess(true);
+    const isPastDate = reserveDate < today && !sameDay;
+
+    console.log(sameDay);
+    console.log(reserveDate.getDate());
+    const newErrors = {
+      nameError: "",
+      personError: "",
+      requestError: "",
+      dateError: "",
+      hourError: "",
+    };
+
+    let isValid = true;
+
+    if (name.trim().length === 0) {
+      newErrors.nameError = "Name is required.";
+      isValid = false;
     }
-    if (
-      inputValue.trim().length !== 0 &&
-      name.trim().length !== 0 &&
-      /^[A-Za-z\s]+$/.test(name) &&
-      reserveDate &&
-      reserveDate.length !== 0 &&
-      reserveDate.getFullYear() === 2024 &&
-      reserveDate.getDate() >= today.getDate() &&
-      reserveDate.getMonth() >= today.getMonth()
-    ) {
-      setInputValue("");
-      setName("");
-      setDate("");
+    if (!/^[A-Za-z\s]+$/.test(name)) {
+      newErrors.nameError = "Invalid name format.";
+      isValid = false;
+    }
+
+    // Date and time validation
+
+    function controlForm() {
+      if (isNaN(reserveDate.getTime())) {
+        newErrors.dateError = "please fill date field";
+        isValid = false;
+      } else {
+        return false;
+      }
+    }
+    if (isPastDate) {
+      newErrors.dateError = "Invalid date: Please select a future date.";
+      isValid = false;
+    }
+    if (sameDay && parseInt(hour) < today.getHours()) {
+      newErrors.hourError = "Invalid time: Please select a future time.";
+      isValid = false;
+    }
+
+    if (reserveDate.getFullYear() !== 2024) {
+      newErrors.dateError = "Please select correct year";
+      isValid = false;
+      // Person validation
+      if (person < 1 || person > 12) {
+        newErrors.personError = "Number of persons must be between 1 and 12.";
+        isValid = false;
+      }
+
+      // Request validation
+      if (requestValue.trim().length === 0) {
+        newErrors.requestError = "Request is required.";
+        isValid = false;
+      }
+    }
+    controlForm();
+
+    if (isValid) {
       setSuccess(true);
+    } else {
+      setError(newErrors);
     }
   }
 
@@ -66,19 +127,21 @@ function TableReserve() {
 
   return success ? (
     <div className="Success-Reserve">
-      <h2>
+      <img src={logo}></img>
+      <h2 className="success-description">
         Your reservation is complete!{" "}
         <span className="check-icon">
           <i class="fa-solid fa-check"></i>
         </span>
-      </h2>
+      </h2>{" "}
+      <h2 className="succes-customername">Hi! {name}</h2>
       <p className="success-p">{person} person for reserve complete</p>
       <p className="success-p">See you later ! </p>
     </div>
   ) : (
     <>
       <div className="form-container">
-        <form className="reserve-form">
+        <form onSubmit={handleSubmit} className="reserve-form">
           <h2 className="reserve-title">Make a Reservation Now</h2>
           <input
             className="reserve-input"
@@ -95,7 +158,8 @@ function TableReserve() {
             onChange={(e) => {
               setDate(e.target.value);
             }}
-          ></input>
+          ></input>{" "}
+          {error.dateError && <p>{error.dateError}</p>}
           <label className="time-label">
             Time
             <select
@@ -105,13 +169,13 @@ function TableReserve() {
               value={hour}
               onChange={(e) => setHour(e.target.value)}
             >
-              <option>19:00</option>
-              <option>20:00</option>
-              <option>21:00</option>
-              <option>22:00</option>
+              <option value="19">19:00 </option>
+              <option value="20">20:00</option>
+              <option value="21">21:00</option>
+              <option value="22">22:00</option>
             </select>
-          </label>
-
+          </label>{" "}
+          {error.hourError && <p>{error.hourError}</p>}
           <div className="person-reserve">
             <label className="person-label">
               Person
@@ -126,8 +190,15 @@ function TableReserve() {
                   type="text"
                   name="guests"
                   value={person}
+                  data-testid="personNumber"
+                  readOnly
                 ></input>
-                <button className="person-btn" onClick={handlePlusPerson}>
+                {error.personError && <p>{error.personError}</p>}
+                <button
+                  className="person-btn"
+                  onClick={handlePlusPerson}
+                  data-testid="addOne"
+                >
                   +
                 </button>{" "}
               </div>
@@ -141,14 +212,14 @@ function TableReserve() {
               <option>Anniversary</option>
             </select>
           </label>
-
           <textarea
             placeholder="Requests"
             id="request-text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            value={requestValue}
+            onChange={(e) => setRequestValue(e.target.value)}
             onKeyDown={handleEnterReserved}
           ></textarea>
+          {error.requestError && <p>{error.requestError}</p>}
           <button
             type="submit"
             className="reserve-btn"

@@ -69,10 +69,11 @@ function TableReserve() {
     if (name.trim().length === 0) {
       newErrors.nameError = "Name is required.";
       isValid = false;
-    }
-    if (!/^[A-Za-z\s]+$/.test(name)) {
-      newErrors.nameError = "Invalid name format.";
-      isValid = false;
+    } else {
+      if (!/^[A-Za-z\s]+$/.test(name)) {
+        newErrors.nameError = "Invalid name format.";
+        isValid = false;
+      }
     }
 
     // Date and time validation
@@ -150,6 +151,7 @@ function TableReserve() {
             onChange={(e) => setName(e.target.value)}
             placeholder="CustomerName"
           ></input>
+          {error.nameError && <p className="error-msg">* {error.nameError}</p>}
           <input
             className="reserve-input"
             type="date"
@@ -159,7 +161,7 @@ function TableReserve() {
               setDate(e.target.value);
             }}
           ></input>{" "}
-          {error.dateError && <p>{error.dateError}</p>}
+          {error.dateError && <p className="error-msg">* {error.dateError}</p>}
           <label className="time-label">
             Time
             <select
@@ -175,7 +177,7 @@ function TableReserve() {
               <option value="22">22:00</option>
             </select>
           </label>{" "}
-          {error.hourError && <p>{error.hourError}</p>}
+          {error.hourError && <p className="error-msg">* {error.hourError}</p>}
           <div className="person-reserve">
             <label className="person-label">
               Person
@@ -193,7 +195,9 @@ function TableReserve() {
                   data-testid="personNumber"
                   readOnly
                 ></input>
-                {error.personError && <p>{error.personError}</p>}
+                {error.personError && (
+                  <p className="error-msg">* {error.personError}</p>
+                )}
                 <button
                   className="person-btn"
                   onClick={handlePlusPerson}
@@ -219,7 +223,9 @@ function TableReserve() {
             onChange={(e) => setRequestValue(e.target.value)}
             onKeyDown={handleEnterReserved}
           ></textarea>
-          {error.requestError && <p>{error.requestError}</p>}
+          {error.requestError && (
+            <p className="error-msg">{error.requestError}</p>
+          )}
           <button
             type="submit"
             className="reserve-btn"

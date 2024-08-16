@@ -45,48 +45,57 @@ function Navbar() {
         <div className="line"></div>
       </nav>
       {mobileMod && (
-        <div className="dropdown-menu">
-          <ul className="dropdown-list">
-            <div className="list-container">
-              <li>
-                <Link className="nav-item" to="/">
-                  Home
-                </Link>
-              </li>
+        <div style={{ display: "flex" }}>
+          <div className="dropdown-menu">
+            <ul className="dropdown-list">
+              <div className="list-container">
+                <li>
+                  <Link className="nav-item" to="/">
+                    Home
+                  </Link>
+                </li>
+                <hr></hr>
+              </div>
+              <div className="list-container">
+                <li>
+                  <Link className="nav-item" to="/About">
+                    About
+                  </Link>
+                </li>
+              </div>
               <hr></hr>
+              <div className="list-container">
+                <li>
+                  <Link className="nav-item" to="/CustomersSay">
+                    CustomersSay
+                  </Link>
+                </li>
+              </div>
+              <hr></hr>
+              <div className="list-container">
+                <li>
+                  <Link className="nav-item" to="/Menu">
+                    Menu
+                  </Link>
+                </li>
+              </div>
+              <hr></hr>
+              <div className="list-container">
+                <li>
+                  <Link className="nav-item" to="/BookingPage">
+                    BookingPage
+                  </Link>
+                </li>
+              </div>
+              <hr></hr>
+            </ul>
+            <div
+              onClick={handleMobile}
+              style={{ padding: "6px", cursor: "pointer" }}
+            >
+              X
             </div>
-            <div className="list-container">
-              <li>
-                <Link className="nav-item" to="/About">
-                  About
-                </Link>
-              </li>
-            </div>
-            <hr></hr>
-            <div className="list-container">
-              <li>
-                <Link className="nav-item" to="/CustomersSay">
-                  CustomersSay
-                </Link>
-              </li>
-            </div>
-            <hr></hr>
-            <div className="list-container">
-              <li>
-                <Link className="nav-item" to="/Specials">
-                  Specials
-                </Link>
-              </li>
-            </div>
-            <hr></hr>
-            <div className="list-container">
-              <li>
-                <Link className="nav-item" to="/Login">
-                  Login
-                </Link>
-              </li>
-            </div>
-          </ul>
+          </div>
         </div>
       )}
     </>
